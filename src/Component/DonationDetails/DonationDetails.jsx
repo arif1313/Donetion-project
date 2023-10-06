@@ -1,10 +1,17 @@
 import { useLoaderData } from "react-router-dom";
+import saveData from "../../utilities/Utilites"
 
 
 const DonationDetails = () => {
 
     const donation = useLoaderData();
-    const { title, image, description, text_colour , price} = donation
+    const {id, title, image, description, text_colour , price} = donation
+    const handleclick=() =>{
+        console.log('ama',id);
+
+        saveData(id);
+       
+    }
 
     return (
         // 'url({image})'
@@ -12,7 +19,8 @@ const DonationDetails = () => {
             <div className="mx-auto container">
                 <div className="">
                    <div className="relative">
-                   <button style={{ backgroundColor: text_colour }} className="btn absolute z-10 bottom-9 left-9 border-none rounded-sm text-white normal-case" >Donate $ {price}
+                   <button 
+                   style={{ backgroundColor: text_colour }} className="btn absolute z-10 bottom-9 left-9 border-none rounded-sm text-white normal-case" onClick={handleclick}>Donate $ {price}
                    </button>
                   
                     <div className="relative ">
