@@ -9,6 +9,7 @@ import {
 import Root from './Component/Root/Root.jsx';
 import Home from './Component/Home/Home.jsx';
 import DonationDetails from './Component/DonationDetails/DonationDetails';
+import MyDonations from './Component/MyDonations/MyDonations';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,6 +25,11 @@ const router = createBrowserRouter([
   path: "/DonationDetails/:id",
 loader:({params})=>fetch(`https://api.mocki.io/v2/a49ed43d/${params.id}`),
   element: <DonationDetails></DonationDetails>
+},
+{
+  path: "/donation",
+  loader:()=>fetch('https://api.mocki.io/v2/a49ed43d'),
+  element: <MyDonations></MyDonations>
 }
     ]
      
