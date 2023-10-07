@@ -2,7 +2,7 @@
 
 import PropTypes from 'prop-types';
 const MyDonation = ({singleCard}) => {
-     const {id,title, image, category,button_background_colour,background_colour, text_colour,price}= singleCard;
+     const {title, image, category,button_background_colour,background_colour, text_colour,price}= singleCard;
     return (
         <div>
           <div className='flex rounded-lg 'style={{background: background_colour}}>

@@ -10,6 +10,8 @@ import Root from './Component/Root/Root.jsx';
 import Home from './Component/Home/Home.jsx';
 import DonationDetails from './Component/DonationDetails/DonationDetails';
 import MyDonations from './Component/MyDonations/MyDonations';
+
+import Statistics from './Component/Statistics/Statistics';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -30,6 +32,10 @@ loader:({params})=>fetch(`https://api.mocki.io/v2/a49ed43d/${params.id}`),
   path: "/donation",
   loader:()=>fetch('https://api.mocki.io/v2/a49ed43d'),
   element: <MyDonations></MyDonations>
+},
+{
+  path: "/statistics",
+  element:<Statistics></Statistics>
 }
     ]
      
