@@ -1,11 +1,5 @@
-const getStoreddata= ()=>{
-    const storedData=localStorage.getItem('storeDonation')
-    if(storedData){
-        return JSON.parse(storedData);
-    }
-    return [];
-}
 
+import getStoreddata from "./getelemen";
 const saveData =id=>{
     const storeDonationData = getStoreddata();
     const exist = storeDonationData.find(Id =>Id===id)

@@ -1,7 +1,7 @@
 
 
 const MyDonations = () => {
-    console.log('this is details')
+//    const allCards=
     return (
         <div>
             <h1>this is details section</h1>
