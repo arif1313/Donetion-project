@@ -27,11 +27,15 @@ const MyDonations = () => {
    },[])
    console.log('matched data',matchCards)
     return (
-        <div className="grid grid-cols-2 gap-7 mx-auto container ">
+       <div>
+         <div className="grid grid-cols-2 gap-7 mx-auto container ">
            {
            matchCards.map((singleCard,ind)=><MyDonation key={ind} singleCard={singleCard}></MyDonation>)
            }
         </div>
+        <p> match card : {matchCards.length}</p>
+        <button className={ matchCards.length < 4 ? "hidden":"btn"} > see all </button>
+       </div>
     );
 };
 {/*  */}
