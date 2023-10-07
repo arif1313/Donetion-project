@@ -34,14 +34,14 @@ const Home = () => {
       <h1 className="mb-5 text-5xl text-black font-bold ">I Grow By Helping People In Need</h1>
      <div className="sm:ml-12 md:ml-36">
         {/* banarseach */}
-        <div className="flex ">
+       
         <form action="" onSubmit={hanleSubmit} >
-           
-           <input  type="text" name="text" placeholder="Search here" className="input input-bordered w-full max-w-xs mr-7" /> 
-           <input type="submit" className="btn bg-[#FF444A] "/>
-         
-           </form>
+        <div className="flex ">
+           <input  type="text" name="text" placeholder="Search here" className=" text-black input input-bordered w-full max-w-xs mr-7" /> 
+           <input type="submit" className="btn bg-[#FF444A] text-white"/>
            </div>
+           </form>
+          
      {/* <BannarSearch></BannarSearch> */}
      </div>
     </div>
