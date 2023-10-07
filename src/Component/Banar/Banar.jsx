@@ -16,7 +16,7 @@ const Banar = () => {
     <div className="justify-center">
    
       <h1 className="mb-5 text-5xl text-black font-bold ">I Grow By Helping People In Need</h1>
-     <div className="ml-36">
+     <div className="sm:ml-12 md:ml-36">
 
      <BannarSearch></BannarSearch>
      </div>

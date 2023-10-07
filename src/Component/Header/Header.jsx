@@ -6,11 +6,11 @@ import "./header.css"
 const Header = () => {
     return (
         <div className="mx-auto container">
-            <div className="navbar bg-base-100">
-                <div className="flex-grow">
-                   <img src="./images/Logo.png" alt="" />
+            <div className="flex  justify-between items-center bg-base-100  ">
+                <div className="">
+                   <img className="w-48" src="./images/Logo.png" alt="" />
                  </div>
-                <div className="flex gap-7 ">
+                <div className="flex gap-7 p-5">
                   
                         <NavLink to="/home">Home</NavLink>
                         <NavLink to="/donation">Donation</NavLink>

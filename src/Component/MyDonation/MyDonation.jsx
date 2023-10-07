@@ -5,9 +5,9 @@ const MyDonation = ({singleCard}) => {
      const {title, image, category,button_background_colour,background_colour, text_colour,price}= singleCard;
     return (
         <div>
-          <div className='flex rounded-lg 'style={{background: background_colour}}>
-            <div className='h-56 w-48 rounded-lg'>
-                    <img className='w-full h-full rounded-l-lg'  src={image} alt="" />
+          <div className='sm:block md:flex rounded-lg 'style={{background: background_colour}}>
+            <div className='h-56 md:h-64 lg:h-56 lg:56 sm:w-full md:w-56  rounded-lg'>
+                    <img className='w-full  h-full md:h-64 lg:h-56 rounded-l-lg'  src={image} alt="" />
             </div>
             <div className='p-5'>
             <div style={{ backgroundColor: button_background_colour ,color:text_colour }} className=' border-none py-1 px-2 rounded font-medium w-fit' >{category}</div>

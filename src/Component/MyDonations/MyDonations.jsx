@@ -33,7 +33,7 @@ const MyDonations = () => {
    console.log('matched data',matchCards)
     return (
        <div>
-         <div className="grid grid-cols-2 gap-7 mx-auto container my-7">
+         <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-7 mx-auto container my-7">
            {
            matchCards.slice(0,visable).map((singleCard,ind)=><MyDonation key={ind} singleCard={singleCard}></MyDonation>)
            }

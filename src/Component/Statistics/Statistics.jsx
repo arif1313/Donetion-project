@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import getStoreddata from "../../utilities/getelemen";
-import { PieChart, Pie, Cell,Legend } from 'recharts';
+import { PieChart, Pie, Cell,Legend,  } from 'recharts';
 
 const Statistics = () => {
     
@@ -33,11 +33,10 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
   );
 };
     return (
-        <div className="felx justify-between">
+        
        
-       
-        <div className="ml-96">
-         
+        <div width="100%" height="100%" className="flex justify-center mx-auto container">
+        <div>
         <PieChart width={400} height={400}>
         <Legend /> 
           <Pie
@@ -59,10 +58,10 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
             ))}
           </Pie>
         </PieChart> 
-       
         </div>
-     
         </div>
+      
+      
     );
 };
 
