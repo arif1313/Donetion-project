@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom/client'
+import ReactDOM from 'react-dom'
 
 import './index.css'
 import {
@@ -10,42 +10,41 @@ import Root from './Component/Root/Root.jsx';
 import Home from './Component/Home/Home.jsx';
 import DonationDetails from './Component/DonationDetails/DonationDetails';
 import MyDonations from './Component/MyDonations/MyDonations';
-
 import Statistics from './Component/Statistics/Statistics';
 const router = createBrowserRouter([
   {
-    
-    path: '/' ,
-    element:<Root></Root> ,
-    children:[
 
-{
-  path: "/home",
-  element: <Home></Home>,
-  loader:()=>fetch('https://api.mocki.io/v2/a49ed43d')
- 
-},
-{
-  path: "/DonationDetails/:id",
-loader:({params})=>fetch(`https://api.mocki.io/v2/a49ed43d/${params.id}`),
-  element: <DonationDetails></DonationDetails>
-},
-{
-  path: "/donation",
-  loader:()=>fetch('https://api.mocki.io/v2/a49ed43d'),
-  element: <MyDonations></MyDonations>
-},
-{
-  path: "/statistics",
-  element:<Statistics></Statistics>
-}
+    path: "/",
+    element: <Root></Root>,
+    children: [
+
+      {
+        path: "/home",
+        element: <Home></Home>,
+        loader: () => fetch('https://api.mocki.io/v2/a49ed43d')
+
+      },
+      {
+        path: "/DonationDetails/:id",
+        loader: ({ params }) => fetch(`https://api.mocki.io/v2/a49ed43d/${params.id}`),
+        element: <DonationDetails></DonationDetails>
+      },
+      {
+        path: "/donation",
+        loader: () => fetch('https://api.mocki.io/v2/a49ed43d'),
+        element: <MyDonations></MyDonations>
+      },
+      {
+        path: "/statistics",
+        element: <Statistics></Statistics>
+      }
     ]
-     
+
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-     <RouterProvider router={router} />
+    <RouterProvider router={router} />
   </React.StrictMode>,
 )
