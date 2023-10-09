@@ -15,7 +15,7 @@ import Statistics from './Component/Statistics/Statistics';
 const router = createBrowserRouter([
   {
     
-    path: "/home" ,
+    path: '/' ,
     element:<Root></Root> ,
     children:[
 
