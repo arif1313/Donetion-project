@@ -10,13 +10,10 @@ const MyDonations = () => {
     const [click, setClick]= useState('btn')
 
    const allCards= useLoaderData()
-   console.log('all card display in my donations',allCards)
+   
    useEffect(()=>{
     const mylocalCard =getStoreddata();
-    console.log('my localdat',mylocalCard);
-    console.log('my localdat length',mylocalCard.length);
-    console.log('my all length',allCards.donations
-    .length);
+   
 
     if(allCards.donations
         .length > 0){
@@ -32,7 +29,7 @@ const MyDonations = () => {
     setClick('hidden')
     
   }
-   console.log('matched data',matchCards)
+
     return (
        <div>
          <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-7 mx-auto container my-7">
@@ -49,5 +46,5 @@ const MyDonations = () => {
              </div>
     );
 };
-{/*  */}
+
 export default MyDonations;

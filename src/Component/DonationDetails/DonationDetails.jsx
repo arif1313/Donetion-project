@@ -12,22 +12,22 @@ const DonationDetails = () => {
     
     const {id, title, image, description, text_colour , price} = donation
     const handleclick=() =>{
-        saveData(id);
-        const chackData = getStoreddata()
-        if(!chackData.includes(id))
-        {
-
-            toast('Added your donation successfully!') 
-        }
-        else{
-            toast('this Donation is already added')
-        }
-             
+        
+        const storeDonationData = getStoreddata();
+    const exist = storeDonationData.find(Id =>Id===id)
+    if(!exist)
+    {
+       toast('Donation added')
+    }
+    else{
+        toast('this donation is already added')
+    }
+    saveData(id);      
        
     }
 
     return (
-        // 'url({image})'
+       
         <>
             <div className="mx-auto container">
                 <div className="">
@@ -38,7 +38,7 @@ const DonationDetails = () => {
                   
                     <div className="relative ">
 
-                        {/* <img src="base-image.jpg" alt="Base Image" class="w-full"> */}
+                      
 
                         <img className="h-screen w-full " src={image} alt="" />
 

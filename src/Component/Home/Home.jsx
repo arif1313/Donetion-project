@@ -1,7 +1,7 @@
 
 import { useLoaderData } from "react-router-dom";
 import Card from "../Card/Card";
-// import BannarSearch from "../BannarSearch/BannarSearch";
+
 import { useState } from "react";
 
 const Home = () => {
@@ -19,7 +19,7 @@ const Home = () => {
 
     return (
         <div>
-            {/* banar */}
+          
             <div> 
     <div className="hero min-h-screen" style={{backgroundImage: 'url(./images/headerBg.png)'}}>
       
@@ -30,7 +30,7 @@ const Home = () => {
    
       <h1 className="mb-5 text-5xl text-black font-bold ">I Grow By Helping People In Need</h1>
      <div className="sm:ml-12 md:ml-36">
-        {/* banarseach */}
+       
        
         <form action="" onSubmit={hanleSubmit} >
         <div className="flex ">
@@ -38,17 +38,16 @@ const Home = () => {
            <input type="submit" className="btn bg-[#FF444A] text-white"/>
            </div>
            </form>
-     {/* <BannarSearch></BannarSearch> */}
+    
      </div>
     </div>
   </div>
 </div>
 </div>
-            {/* <Banar></Banar> */}
-         {/* banarclose */}
+          
            <div className="grid sm:grid-cols-1 lg:grid-cols-4 md:grid-cols-2   gap-7 max-auto container mb-7">
            {
-            //  cards.donations.find((card,inx)=>card.category===searchCata? <Card key={inx} card={card}></Card>:'')
+           
             seaccard.map((card,inx)=><Card key={inx} card={card}></Card>)
             }
            </div>
