@@ -8,16 +8,16 @@ const Statistics = () => {
     useEffect(()=>{
         const myDonations = getStoreddata();
         setDOntenumber(myDonations.length)
-        console.log('may d',mydonatNumber);
+       
 
     },[])
     const data = [
-        { name: 'aTotal Donation', value: 12 },
-        { name: 'Your Donation', value: 5 }
+        { name: 'Total Donation', value: 12 },
+        { name: 'Your Donation', value: mydonatNumber}
        
       ];
      
-      const COLORS = ['#00C49F',  '#FF8042'];
+      const COLORS = ['red','#00C49F'];
 
       const RADIAN = Math.PI / 180;
 const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent}) => {
@@ -49,8 +49,7 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
            
             labelLine={false}
             dataKey="value"
-          >
-               
+          >              
             <Legend />  
             
           {data.map((entry, index) => (
