@@ -13,7 +13,7 @@ const Statistics = () => {
     },[])
     const data = [
         { name: 'Total Donation', value: 12 },
-        { name: 'Your Donation', value: mydonatNumber}
+        { name: 'Your Donations.', value: mydonatNumber}
        
       ];
      
