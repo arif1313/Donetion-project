@@ -11,11 +11,13 @@ import Home from './Component/Home/Home.jsx';
 import DonationDetails from './Component/DonationDetails/DonationDetails';
 import MyDonations from './Component/MyDonations/MyDonations';
 import Statistics from './Component/Statistics/Statistics';
+import Error from './Component/Card/Error/Error';
 const router = createBrowserRouter([
   {
 
     path: "/",
     element: <Root></Root>,
+    errorElement:<Error></Error>,
     children: [
 
       {
