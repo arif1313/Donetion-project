@@ -7,7 +7,6 @@ import { useState } from "react";
 const Home = () => {
     const loadalldata = useLoaderData();
     const cards = loadalldata.donations;
- 
     const [searchCata, setCata]=useState();
     const [seaccard, setSearchcard]= useState(cards);
     const hanleSubmit=e=>{
@@ -17,13 +16,11 @@ const Home = () => {
     setSearchcard(manageCards);
 
     }
-  
-  
+
     return (
         <div>
             {/* banar */}
-            <div>
-    
+            <div> 
     <div className="hero min-h-screen" style={{backgroundImage: 'url(./images/headerBg.png)'}}>
       
   <div className="hero-overlay bg-white bg-opacity-90"></div>
@@ -41,13 +38,11 @@ const Home = () => {
            <input type="submit" className="btn bg-[#FF444A] text-white"/>
            </div>
            </form>
-          
      {/* <BannarSearch></BannarSearch> */}
      </div>
     </div>
   </div>
 </div>
-
 </div>
             {/* <Banar></Banar> */}
          {/* banarclose */}
@@ -57,11 +52,12 @@ const Home = () => {
             seaccard.map((card,inx)=><Card key={inx} card={card}></Card>)
             }
            </div>
-          
-         
-          
+ 
         </div>
     );
 };
 
 export default Home;
+
+
+

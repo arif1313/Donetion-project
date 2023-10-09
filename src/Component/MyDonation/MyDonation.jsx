@@ -1,8 +1,9 @@
 
 
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 const MyDonation = ({singleCard}) => {
-     const {title, image, category,button_background_colour,background_colour, text_colour,price}= singleCard;
+     const {id,title, image, category,button_background_colour,background_colour, text_colour,price}= singleCard;
     return (
         <div>
           <div className='sm:block md:flex rounded-lg 'style={{background: background_colour}}>
@@ -13,8 +14,8 @@ const MyDonation = ({singleCard}) => {
             <div style={{ backgroundColor: button_background_colour ,color:text_colour }} className=' border-none py-1 px-2 rounded font-medium w-fit' >{category}</div>
                     <h1 className='text-2xl font-semibold my-2'> {title}</h1>
                     <h3 style={{color:text_colour} } className='mb-2 font-semibold text-lg'>$ {price}</h3>
-                    <button className='normal-case btn text-white font-semibold my-2 text-lg rounded-md'style={{background: text_colour}}> View Details</button>
-
+                   <NavLink to={`/DonationDetails/${id}`}> <button className='normal-case btn text-white font-semibold my-2 text-lg rounded-md'style={{background: text_colour}}> View Details</button>
+</NavLink>
             </div>
           </div>
         </div>

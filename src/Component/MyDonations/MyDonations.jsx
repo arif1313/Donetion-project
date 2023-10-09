@@ -7,6 +7,7 @@ import MyDonation from "../MyDonation/MyDonation";
 const MyDonations = () => {
     const [matchCards, setMatchCards]=useState([]);
     const [visable, setVisable]=useState(4);
+    const [click, setClick]= useState('btn')
 
    const allCards= useLoaderData()
    console.log('all card display in my donations',allCards)
@@ -28,6 +29,7 @@ const MyDonations = () => {
    
   const handleclick=(x)=>{
     setVisable(x.length);
+    setClick('hidden')
     
   }
    console.log('matched data',matchCards)
@@ -41,9 +43,8 @@ const MyDonations = () => {
        
         <div className="text-center my-5">
        
-       <button className={ matchCards.length < 4 ? "hidden":"btn"} onClick={()=>handleclick(matchCards.length) }style={{background:  '#009444',color: 'white'}}> see all </button>
-  
-     
+       <button className={ matchCards.length < 4 ? "hidden":click} onClick={()=>handleclick(matchCards.length) }style={{background:  '#009444',color: 'white'}}> see all </button>
+
         </div>
              </div>
     );

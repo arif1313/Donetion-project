@@ -1,5 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import saveData from "../../utilities/Utilites"
+import { toast } from "react-toastify";
 
 
 const DonationDetails = () => {
@@ -8,7 +9,7 @@ const DonationDetails = () => {
     const {id, title, image, description, text_colour , price} = donation
     const handleclick=() =>{
         console.log('ama',id);
-
+        toast('add my donation successfully')
         saveData(id);
        
     }
@@ -32,7 +33,6 @@ const DonationDetails = () => {
                         <div className="absolute bottom-0 left-0 w-full h-28 flex items-center justify-center bg-black opacity-40">
 
                         </div>
-
                     </div>
                    </div>
                 </div>
