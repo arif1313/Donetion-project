@@ -14,14 +14,16 @@ import MyDonations from './Component/MyDonations/MyDonations';
 import Statistics from './Component/Statistics/Statistics';
 const router = createBrowserRouter([
   {
-    path: "/",
+    
+    path: "/home" ,
     element:<Root></Root> ,
     children:[
 
 {
   path: "/home",
-  loader:()=>fetch('https://api.mocki.io/v2/a49ed43d'),
-  element: <Home></Home>
+  element: <Home></Home>,
+  loader:()=>fetch('https://api.mocki.io/v2/a49ed43d')
+ 
 },
 {
   path: "/DonationDetails/:id",
