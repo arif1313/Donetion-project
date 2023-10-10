@@ -2,6 +2,9 @@
 import { useLoaderData } from "react-router-dom";
 import Card from "../Card/Card";
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import { useState } from "react";
 
 const Home = () => {
@@ -17,9 +20,17 @@ const Home = () => {
         setCata(searchValue)
       console.log(searchCata)
       console.log('allcards ', cards) 
-      const manageCards= cards.filter(acard=>(acard.category.toLowerCase()).includes(searchCata ))  
-    setSearchcard(manageCards);
-    console.log('search',seaccard)
+      const manageCards= cards.filter(acard=>(acard.category.toLowerCase()).includes(searchCata )) 
+      
+       if(manageCards.length>0){
+        setSearchcard(manageCards);
+       }
+       else{
+        setSearchcard(cards)
+        toast('search chatagory not mach')
+       }
+   
+   
     }
     return (
         <div>
@@ -55,7 +66,7 @@ const Home = () => {
             seaccard.map((card,inx)=><Card key={inx} card={card}></Card>)
             }
            </div>
- 
+ <ToastContainer></ToastContainer>
         </div>
     );
 };
