@@ -7,16 +7,20 @@ import { useState } from "react";
 const Home = () => {
     const loadalldata = useLoaderData();
     const cards = loadalldata.donations;
+   
     const [searchCata, setCata]=useState();
     const [seaccard, setSearchcard]= useState(cards);
-    const hanleSubmit=e=>{
+    const hanleSubmit= e =>{
         e.preventDefault();
-      setCata(e.target.text.value);
-      const manageCards= cards.filter(acard=>acard.category === searchCata)
+        console.log('search vallue',e.target.text.value)
+        const searchValue = e.target.text.value.toLowerCase();
+        setCata(searchValue)
+      console.log(searchCata)
+      console.log('allcards ', cards) 
+      const manageCards= cards.filter(acard=>(acard.category.toLowerCase()) === searchCata )  
     setSearchcard(manageCards);
-
+    console.log('search',seaccard)
     }
-
     return (
         <div>
           
@@ -33,10 +37,10 @@ const Home = () => {
        
        
         <form action="" onSubmit={hanleSubmit} >
-        <div className="flex ">
+      
            <input  type="text" name="text" placeholder="Search here" className=" text-black input input-bordered w-full max-w-xs mr-7" /> 
            <input type="submit" className="btn bg-[#FF444A] text-white"/>
-           </div>
+   
            </form>
     
      </div>
