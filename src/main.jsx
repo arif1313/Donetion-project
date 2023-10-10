@@ -15,29 +15,29 @@ import Error from './Component/Card/Error/Error';
 const router = createBrowserRouter([
   {
 
-    path: "/",
+    path: '/',
     element: <Root></Root>,
     errorElement:<Error></Error>,
     children: [
 
       {
-        path: "/home",
+        path: '/',
         element: <Home></Home>,
         loader: () => fetch('https://api.mocki.io/v2/a49ed43d')
 
       },
       {
-        path: "/DonationDetails/:id",
+        path: '/DonationDetails/:id',
         loader: ({ params }) => fetch(`https://api.mocki.io/v2/a49ed43d/${params.id}`),
         element: <DonationDetails></DonationDetails>
       },
       {
-        path: "/donation",
+        path: '/donation',
         loader: () => fetch('https://api.mocki.io/v2/a49ed43d'),
         element: <MyDonations></MyDonations>
       },
       {
-        path: "/statistics",
+        path: '/statistics',
         element: <Statistics></Statistics>
       }
     ]
