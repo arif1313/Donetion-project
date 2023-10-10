@@ -17,7 +17,7 @@ const Home = () => {
         setCata(searchValue)
       console.log(searchCata)
       console.log('allcards ', cards) 
-      const manageCards= cards.filter(acard=>(acard.category.toLowerCase()) === searchCata )  
+      const manageCards= cards.filter(acard=>(acard.category.toLowerCase()).includes(searchCata ))  
     setSearchcard(manageCards);
     console.log('search',seaccard)
     }
