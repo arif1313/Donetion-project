@@ -11,16 +11,13 @@ const Home = () => {
     const loadalldata = useLoaderData();
     const cards = loadalldata.donations;
    
-    const [searchCata, setCata]=useState();
+
     const [seaccard, setSearchcard]= useState(cards);
     const hanleSubmit= e =>{
         e.preventDefault();
-        console.log('search vallue',e.target.text.value)
+       
         const searchValue = e.target.text.value.toLowerCase();
-        setCata(searchValue)
-      console.log(searchCata)
-      console.log('allcards ', cards) 
-      const manageCards= cards.filter(acard=>(acard.category.toLowerCase()).includes(searchCata )) 
+      const manageCards= cards.filter(acard=>(acard.category.toLowerCase()).includes(searchValue )) 
       
        if(manageCards.length>0){
         setSearchcard(manageCards);
