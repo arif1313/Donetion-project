@@ -27,7 +27,7 @@ const Home = () => {
        }
        else{
         setSearchcard(cards)
-        toast('search chatagory not mach')
+        toast('search chatagory not matching')
        }
    
    
