@@ -23,18 +23,19 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch('https://api.mocki.io/v2/a49ed43d')
+        loader: () => fetch('/public/Donation.json')
 
       },
       {
-        path: '/DonationDetails/:id',
-        loader: ({ params }) => fetch(`https://api.mocki.io/v2/a49ed43d/${params.id}`),
+        path: '/DonationDetails/:singelId',
+        loader: () => fetch('/public/Donation.json'),
         element: <DonationDetails></DonationDetails>
       },
       {
         path: '/donation',
-        loader: () => fetch('https://api.mocki.io/v2/a49ed43d'),
-        element: <MyDonations></MyDonations>
+        element: <MyDonations></MyDonations>,
+        loader: () => fetch('/public/Donation.json')
+
       },
       {
         path: '/statistics',

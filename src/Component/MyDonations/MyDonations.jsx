@@ -1,16 +1,20 @@
 import { useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom";
+
 import getStoreddata from "../../utilities/getelemen";
 import MyDonation from "../MyDonation/MyDonation";
+import { useLoaderData } from "react-router-dom";
 
 
 const MyDonations = () => {
     const [matchCards, setMatchCards]=useState([]);
     const [visable, setVisable]=useState(4);
     const [click, setClick]= useState('btn')
-
-   const allCards= useLoaderData()
    
+   
+    
+   const allCards= useLoaderData()
+  console.log('allcard',allCards)
+
    useEffect(()=>{
     const mylocalCard =getStoreddata();
    
@@ -23,6 +27,7 @@ const MyDonations = () => {
     }
    
    },[])
+   console.log('matchs',matchCards)
    
   const handleclick=(x)=>{
     setVisable(x.length);
@@ -32,6 +37,7 @@ const MyDonations = () => {
 
     return (
        <div>
+      
          <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-7 mx-auto container my-7">
            {
            matchCards.slice(0,visable).map((singleCard,ind)=><MyDonation key={ind} singleCard={singleCard}></MyDonation>)

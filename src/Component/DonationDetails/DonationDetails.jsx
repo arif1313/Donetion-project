@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 import saveData from "../../utilities/Utilites"
 
 import { ToastContainer, toast } from 'react-toastify';
@@ -8,9 +8,16 @@ import getStoreddata from "../../utilities/getelemen";
 
 const DonationDetails = () => {
 
-    const donation = useLoaderData();
+    const lodeddata = useLoaderData();
+    const donations= lodeddata.donations
+    const {singelId} = useParams();
+    console.log('id',singelId, 'donations', donations)
+    const donation = donations.find(obj=>obj.id === parseInt(singelId))
+    const {id,category,image,title,description,price,background_colour,button_background_colour,text_colour,category_background_colour}=donation
+    console.log(Object.keys(donation).join(","))
+    console.log(donation)
     
-    const {id, title, image, description, text_colour , price} = donation
+   
     const handleclick=() =>{
         
         const storeDonationData = getStoreddata();
@@ -29,6 +36,7 @@ const DonationDetails = () => {
     return (
        
         <>
+       
             <div className="mx-auto container">
                 <div className="">
                    <div className="relative">
